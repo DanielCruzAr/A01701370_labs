@@ -1,0 +1,23 @@
+h1{
+    margin-top: 1em;
+    padding-top: 1em;
+    color: rgb(18, 46, 35);
+}
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: rgb(10, 10, 10);
+}
+
+header {
+    background-color: cadetblue;
+    background-image: -moz-element();
+    background-position: center top;
+    background-repeat: no-repeat;
+    line-height: 1.2;
+    text-align: center;
+}
