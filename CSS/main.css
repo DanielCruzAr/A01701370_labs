@@ -13,8 +13,8 @@ body {
     color: #555;
 }
 
-h1, strong {
-    color: #333;
+h1 {
+    color: rgb(15, 119, 24);
 }
 
 code,
