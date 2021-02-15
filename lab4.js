@@ -72,4 +72,23 @@ function cinco() {
 }
 
 //Ejercicio6
-function seis(){}
+class recursion{
+	constructor(x){
+		this.a = x;
+	}
+
+	sumaIterativa(){
+		let acum=0;
+    	for(let i=1;i<=this.a;i++){
+        	acum+=i;
+    	}
+    return acum;
+	}
+}
+
+function seis(){
+	num = window.prompt("Escribe el número");
+	const object = new recursion(num);
+	res = object.sumaIterativa();
+	document.write(res);
+}
