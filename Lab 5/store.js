@@ -7,9 +7,9 @@ function cobrar(){
     let iva = suma*0.10;
     let total = suma+iva;
 
-    document.write('<p>Productos = '+suma);
-    document.write('<p>IVA = '+iva);
-    document.write('<p>Total = '+total);
+    document.write("<p>Productos = "+suma+"</p>");
+    document.write("<p>IVA = "+iva+"</p>");
+    document.write("<p>Total = "+total+"</p>");
 }
 
 const press = document.getElementById("accept");

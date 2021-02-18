@@ -28,6 +28,7 @@ function validate(){
 
     else{
         alert("Contraseña aceptada");
+        // window.location.href = "store.html";
         return true;
     }
 }

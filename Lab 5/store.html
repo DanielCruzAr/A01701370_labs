@@ -5,28 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/frameworks.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">  
 </head>
 <body>
-    <h1>Alimento para perro</h1>
-    <div>
-        <h3>NUPEC adulto</h3>
-        <p>$1300 por unidad</p>
-        <p>Ingrese cantidad de costales</p>
-        <input id="adulto" type="number">
+    <h1>alimento para perro</h1>
+    <div class="productos">
+        <div class="product adult">
+            <h3>nupec adulto</h3>
+            <p>$1300 por unidad</p>
+            <p>Ingrese cantidad de costales</p>
+            <input id="adulto" type="number">
+        </div>
+        <div class="product puppy">
+            <h3>nupec cachorro</h3>
+            <p>$1500 por unidad</p>
+            <p>Ingrese cantidad de costales</p>
+            <input id="cachorro" type="number">
+        </div>
+        <div class="product senior">
+            <h3>nupec senior</h3>
+            <p>$1100 por unidad</p>
+            <p>Ingrese cantidad de costales</p>
+            <input id="senior" type="number">
+        </div>
     </div>
-    <div>
-        <h3>NUPEC cachorro</h3>
-        <p>$1500 por unidad</p>
-        <p>Ingrese cantidad de costales</p>
-        <input id="cachorro" type="number">
-    </div>
-    <div>
-        <h3>NUPEC senior</h3>
-        <p>$1100 por unidad</p>
-        <p>Ingrese cantidad de costales</p>
-        <input id="senior" type="number">
-    </div>
-    <button id="accept">Continuar</button>
+    <button id="accept">continuar</button>
     <script src="store.js"></script>
 </body>
 </html>
