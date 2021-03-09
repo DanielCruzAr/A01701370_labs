@@ -1,0 +1,19 @@
+--1 Actrices de “Las brujas de Salem”
+
+--Sin subconsultas 
+
+SELECT Nombre
+FROM Actor A, Elenco E
+WHERE A.Nombre = E.Nombre
+AND Sexo = 'F' AND Titulo = 'Las brujas salem'
+
+--Con subconsultas
+
+SELECT Nombre
+FROM Elenco
+WHERE Titulo = 'Las brujas de salem'
+AND Nombre IN (SELECT Nombre
+FROM Actor
+WHERE Sexo ='F')
+
+--2 Nombres de los actores que aparecen en películas producidas por MGM en 1995
