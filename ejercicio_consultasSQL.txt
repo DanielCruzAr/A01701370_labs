@@ -1,3 +1,11 @@
+/*
+Película (título, año, duración, encolor, presupuesto, nomestudio, idproductor)
+Elenco (título, año, nombre, sueldo)
+Actor (nombre, dirección, telefono, fechanacimiento, sexo)
+Productor (idproductor, nombre, dirección, teléfono)
+Estudio (nomestudio, dirección) 
+*/
+
 /* Ingreso total recibido por cada actor */
 
 SELECT Nombre, SUM(Sueldo) as 'Ingreso Total'
@@ -20,6 +28,11 @@ ORDER BY AVG(sueldo) DESC
 
 /* Título y año de producción de las películas con menor presupuesto. (Por ejemplo, la película de Titanic se ha producido en varias veces entre la lista de películas estaría la producción de Titanic y el año que fue filmada con menor presupuesto).  */
 
-
+SELECT Titulo, Año, Min(Presupuesto)
+FROM Peliculas
 
 /* Mostrar el sueldo de la actriz mejor pagada */
+
+SELECT Max(Sueldo)
+FROM Elenco
+WHERE Sexo = 'F'
