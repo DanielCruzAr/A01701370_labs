@@ -78,7 +78,7 @@ where entregan.numero < = proyectos.numero
 
 num. de renglones: 1000
 
-## Unión (se ilustra junto con selección)
+### Unión (se ilustra junto con selección)
 
 **Algebra relacional.**
 SL{clave=1430}(entregan) UN SL{clave=1300}(entregan)
