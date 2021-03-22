@@ -137,4 +137,92 @@ num. de renglones: 5852
 Los datos se encuentran de izquierda a derecha comenzando por los de la tabla *entregan* y seguidos por 
 los de la tabla *materiales*. Cada cambio de la columna *clave* en *materiales* es una tupla.
 
+### Construcción de consultas a partir de una especificación
+
+Plantea ahora una consulta para obtener las descripciones de los materiales entregados en el año 2000.
+
+Recuerda que la fecha puede indicarse como '01-JAN-2000' o '01/01/00'.
+
+***Importante:** Recuerda que cuando vayas a trabajar con fechas, antes de que realices tus consultas debes ejecutar la instrucción "set dateformat dmy". Basta con que la ejecutes una sola vez para que el manejador sepa que vas a trabajar con ese formato de fechas.*
+
+select M.descripcion 
+from entregan E, materiales M 
+where E.fecha between '01-JAN-2000' and '31-DEC-2000'
+
+Varilla 3/16
+Varilla 4/32
+Varilla 3/17
+
+num. de renglones: 1232
+
+**¿Por qué aparecen varias veces algunas descripciones de material?**
+Porque se han entregado los mismos materiales más de una vez en todo el año
+
+### Uso del calificador distinct
+
+En el resultado anterior, observamos que una misma descripción de material aparece varias veces.
+
+Agrega la palabra distinct inmediatamente después de la palabra select a la consulta que planteaste antes.
+
+**¿Qué resultado obtienes en esta ocasión?**
+Cada material repetido solo una vez y ordenado alfabéticamente
+
+### Ordenamientos.
+
+Si al final de una sentencia select se agrega la cláusula
+
+order by campo [desc] [,campo [desc] ...]
+
+donde las partes encerradas entre corchetes son opcionales (los corchetes no forman parte de la sintaxis), los puntos suspensivos indican que pueden incluirse varios campos y la palabra desc se refiere a descendente. Esta cláusula permite presentar los resultados en un orden específico.
+
+Obtén los números y denominaciones de los proyectos con las fechas y cantidades de sus entregas, ordenadas por número de proyecto, presentando las fechas de la más reciente a la más antigua.
+
+select distinct E.fecha, M.descripcion
+from entregan E, materiales M 
+where E.fecha between '01-JAN-2000' and '31-DEC-2000'
+order by fecha desc
+
+2000-11-10 00:00:00.000	Arena
+2000-11-10 00:00:00.000	Block
+2000-11-10 00:00:00.000	Cantera amarilla
+
+num. de renglones: 5852
+
+### Uso de expresiones.
+
+En álgebra relacional los argumentos de una proyección deben ser columnas. Sin embargo en una sentencia SELECT es posible incluir expresiones aritméticas o funciones que usen como argumentos de las columnas de las tablas involucradas o bien constantes. Los operadores son:
+
++ Suma
+- Resta
+* Producto
+/ División
+
+Las columnas con expresiones pueden renombrarse escribiendo después de la expresión un alias que puede ser un nombre arbitrario; si el alias contiene caracteres que no sean números o letras (espacios, puntos etc.) debe encerrarse entre comillas dobles (" nuevo nombre" ). Para SQL Server también pueden utilizarse comillas simples.
+
+### Operadores de cadena
+
+El operador LIKE se aplica a datos de tipo cadena y se usa para buscar registros, es capaz de hallar coincidencias dentro de una cadena bajo un patrón dado.
+
+También contamos con el operador comodín (%), que coincide con cualquier cadena que tenga cero o más caracteres. Este puede usarse tanto de prefijo como sufijo.
+
+SELECT * FROM productos where Descripcion LIKE 'Si%'
+
+¿Qué resultado obtienes?
+Explica que hace el símbolo '%'.
+¿Qué sucede si la consulta fuera : LIKE 'Si' ?
+¿Qué resultado obtienes?
+Explica a qué se debe este comportamiento.
+
+Otro operador de cadenas es el de concatenación, (+, +=) este operador concatena dos o más cadenas de caracteres.
+Su sintaxis es : Expresión + Expresión.
+Un ejemplo de su uso, puede ser: Un ejemplo de su uso, puede ser:
+SELECT (Apellido + ', ' + Nombre) as Nombre FROM Personas;
+
+DECLARE @foo varchar(40);
+DECLARE @bar varchar(40);
+SET @foo = '¿Que resultado';
+SET @bar = ' ¿¿¿??? '
+SET @foo += ' obtienes?';
+PRINT @foo + @bar; 
+
 
