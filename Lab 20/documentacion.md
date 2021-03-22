@@ -207,11 +207,17 @@ También contamos con el operador comodín (%), que coincide con cualquier caden
 
 SELECT * FROM productos where Descripcion LIKE 'Si%'
 
-¿Qué resultado obtienes?
-Explica que hace el símbolo '%'.
-¿Qué sucede si la consulta fuera : LIKE 'Si' ?
-¿Qué resultado obtienes?
-Explica a qué se debe este comportamiento.
+**¿Qué resultado obtienes?**
+1120	Sillar rosa	100.00
+1130	Sillar gris	110.00
+**Explica que hace el símbolo '%'.**
+Completa el string de descripción para que se muestren todos los datos que empiecen con 'Si'
+**¿Qué sucede si la consulta fuera : LIKE 'Si' ?**
+No devuelve ningun material ya que ninguno se llama 'Si' a secas
+**¿Qué resultado obtienes?**
+Ninguno
+**Explica a qué se debe este comportamiento.**
+Ningún material se llama 'Si' a secas
 
 Otro operador de cadenas es el de concatenación, (+, +=) este operador concatena dos o más cadenas de caracteres.
 Su sintaxis es : Expresión + Expresión.
