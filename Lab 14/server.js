@@ -2,6 +2,12 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const router = express.Router();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const ruta_nupec = require('./routes/nupec.js');
+const ruta_rc = require('./routes/royal-canin.js');
+const ruta_proplan = require('./routes/proplan.js');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -17,17 +23,11 @@ router.get('/', (request, response, next) => {
     response.render('store.ejs', {datos:datos});
 });
 
-router.get('/nupec', (request, response, next) => {
-    response.render('nupec.ejs', {datos:datos});
-});
+router.get('/nupec', ruta_nupec);
 
-router.get('/royal-canin', (request, response, next) => {
-    response.render('royal-canin.ejs', {datos:datos});
-});
+router.get('/royal-canin', ruta_rc);
 
-router.get('/proplan', (request, response, next) => {
-    response.render('proplan.ejs', {datos:datos});
-});
+router.get('/proplan', ruta_proplan);
 
 router.post('/post', (request, response, next) => {
     console.log("hola mundo");
