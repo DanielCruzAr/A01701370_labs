@@ -30,7 +30,15 @@ router.get('/royal-canin', ruta_rc);
 router.get('/proplan', ruta_proplan);
 
 router.post('/post', (request, response, next) => {
-    console.log("hola mundo");
+    let suma = 0;
+    
+    for(let i = 0; i < datos.length ; i++){
+        if(parseInt(request.body[datos[i].Titulo]) != 0){
+            suma += parseInt(request.body[datos[i].Titulo]*datos[i].Precio);
+        }
+    }
+    
+    console.log(suma);
 });
 
 router.get( (request, response, next) => {
